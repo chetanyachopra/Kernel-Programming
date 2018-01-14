@@ -27,32 +27,36 @@ int main() {
             for(i = p * 2;i <= n;i+= p){
                 if(prime[i] == -1){
                 prime[i] = -2;
-                notp++;}
+                notp++;
+                    }
                 }
         }    
     }
-
+//    for(p = 2;p <= n;p++) printf("%d ", prime[p]);
+ //   printf("\n");
     //printf("notp = %d\n", notp);
     int nt = n - notp + 1;
     printf("nt = %d\n", nt);
     int count = 0;
-    for(p = 2;p <= nt;p++) {
+    for(p = 2;p <= n;p++) {
         if(prime[p] == -1) {
             s[count] = p;count++;
         }
     }
     shmdt(s);
 
-    }else{
+    }else{ 
     //parent
         wait();
         key_t key = ftok("OS", 90);
         int shmid = shmget(key, 4096, 0666|IPC_CREAT);
         int *s = (int *)shmat(shmid, (void*)0, 0); 
         printf("Data read from sm : \n");
-        int i;
-        for(i = 0;i < 5;i++)
-            printf("%d ", s[i]);
+        int i = 0;
+        
+        while(s[i] != 0) {
+            printf("%d ", s[i]);i++;
+            }
         printf("\n");
         shmdt(s);
         shmctl(shmid, IPC_RMID, NULL);
