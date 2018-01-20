@@ -1,8 +1,8 @@
 # Kernel-Programming
-### Implimented basic kernel modules like IPC - Inter Process Communication and other operations 
+### Implimented basic kernel functionalities  
 * best to learn how basic kernel modules work
 * All modules are implimented in C, C++ or JAVA
 
-File Name     | Functionality
+Folder     |  Content
 ------------- | -------------
-shm.c   |  [shared memory implimentaion or IPC in kernel](https://en.wikipedia.org/wiki/Inter-process_communication)
+[IPC](https://github.com/chetanyachopra/Kernel-Programming/tree/master/IPC)   | [IPC - Inter Process Communication](https://en.wikipedia.org/wiki/Inter-process_communication)
